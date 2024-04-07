@@ -75,7 +75,7 @@
 </head>
 <body>
 <div class="container">
-  <h1>Image Resizer & Compressor</h1>
+  <h1>ALL EXAMS Image Resizer & Compressor</h1>
   <div>
     <label for="exam">Select Exam:</label>
     <select id="exam">
@@ -199,29 +199,6 @@
     // Convert minSizeKB and maxSizeKB to bytes
     var minSizeBytes = minSizeKB * 1024;
     var maxSizeBytes = maxSizeKB * 1024;
-
-    // Check if width and height meet the required dimensions
-    var exam = document.getElementById('exam').value;
-    var docType = document.getElementById('docType').value;
-    var validWidth, validHeight;
-
-    if (exam === 'SI_CPO_2024') {
-      validWidth = 4 * 37.7952755906; // 4cm to px
-      validHeight = 2 * 37.7952755906; // 2cm to px
-    } else if (exam === 'SBI_PO_CLERK') {
-      if (docType === 'profile_photo') {
-        validWidth = 200;
-        validHeight = 230;
-      } else if (docType === 'signature') {
-        validWidth = 140;
-        validHeight = 60;
-      }
-    }
-
-    if (width !== validWidth || height !== validHeight) {
-      output.innerHTML = '<p style="color: red;">Please set the width and height according to the requirements.</p>';
-      return;
-    }
 
     // Check if the file size exceeds the maximum size
     if (maxSizeBytes < minSizeBytes || maxSizeBytes < 0) {
